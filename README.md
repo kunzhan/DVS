@@ -1,8 +1,9 @@
-# DVS-driven Graph Diffusion Sampler (DVS)
+# Information-geometric adaptive sampling for graph diffusion [arXiv](https://arxiv.org/abs/2605.00250)
+
+Standard diffusion models for graph generation typically rely on uniform time-stepping, an approach that overlooks the non-homogeneous dynamics of distributional evolution on complex manifolds. In this paper, we present an information-geometric framework that reinterprets the diffusion sampling trajectory as a parametric curve on a Riemannian manifold. Our key observation is that the Fisher-Rao metric provides a principled measure of the intrinsic distance. By analyzing this metric, we derive the Drift Variation Score (DVS), a geometry-aware indicator that quantifies the instantaneous rate of distributional change. Unlike prior heuristic-based adaptive samplers, our DVS solver enforces a constant informational speed on the statistical manifold, automatically maintaining a uniform rate of distributional change along the sampling trajectory. This equal arc-length strategy ensures that each discretization step contributes equally to the information speed. Theoretical analysis verifies that DVS characterizes the local stiffness of the sampling dynamics in the Fisher-Rao sense. Experimental results on molecule and social network generation show that DVS significantly improves structural fidelity and sampling efficiency.
 
 # Dependencies
-
-Please refer to the **Dependencies** in [README.md](../README.md) of the root directory.
+<!-- Please refer to the **Dependencies** in [README.md](../README.md) of the root directory. -->
 
 We recommend using **Python 3.9.15** and **PyTorch 1.12.1**.
 
@@ -14,8 +15,7 @@ conda install -c conda-forge graph-tool=2.45
 conda install -c conda-forge rdkit=2023.03.2
 ```
 
-## Running Experiments
-
+## Experiments
 ### 1. Dataset preparations
 
 We provide two **general graph datasets** (Planar, SBM) and two **molecular graph datasets** (QM9 and ZINC250k).
@@ -95,14 +95,10 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --type sample --config <dataset>
 
 Download and place in `checkpoints/<dataset>`:
 
-- Planar:
-  https://drive.google.com/drive/folders/16lTBrYEqUncuck7k9YDxWuNjTM_PZ4vl?usp=sharing
-- SBM:
-  https://drive.google.com/drive/folders/1XXcmcexRgGou-DPrbs8LgGWUUAdnnu34?usp=sharing
-- QM9:
-  https://drive.google.com/drive/folders/1RokFFheV648c23KWt3tngh_ZFO3uYe1-?usp=sharing
-- ZINC250k:
-  https://drive.google.com/drive/folders/1-W0z3xQEz9To_ewJtLutEjU4SAvDZnAn?usp=sharing
+- [Planar](https://drive.google.com/drive/folders/16lTBrYEqUncuck7k9YDxWuNjTM_PZ4vl?usp=sharing)
+- [SBM](https://drive.google.com/drive/folders/1XXcmcexRgGou-DPrbs8LgGWUUAdnnu34?usp=sharing)
+- [QM9](https://drive.google.com/drive/folders/1RokFFheV648c23KWt3tngh_ZFO3uYe1-?usp=sharing)
+- [ZINC250k](https://drive.google.com/drive/folders/1-W0z3xQEz9To_ewJtLutEjU4SAvDZnAn?usp=sharing)
 
 ------
 
@@ -110,6 +106,21 @@ Download and place in `checkpoints/<dataset>`:
 
 Generated graphs and molecules are provided in:
 
-```sh
+```
 generated_graphs/
 ```
+
+# Citation
+```bash
+@InProceedings{lu2026dvs,
+  author    = {Yuhui Lu and Wenjing Liu and Kun Zhan},
+  booktitle = {ICML},
+  title     = {Information-geometric adaptive sampling for graph diffusion},
+  year      = {2026},
+}
+```
+
+# Contact
+https://kunzhan.github.io/
+
+If you have any questions, feel free to contact me. (Email: `ice.echo#gmail.com`)
