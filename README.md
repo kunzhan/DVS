@@ -15,8 +15,8 @@ conda install -c conda-forge graph-tool=2.45
 conda install -c conda-forge rdkit=2023.03.2
 ```
 
-## Experiments
-### 1. Dataset preparations
+# Experiments
+## 1. Dataset preparations
 
 We provide two **general graph datasets** (Planar, SBM) and two **molecular graph datasets** (QM9 and ZINC250k).
 
@@ -57,7 +57,7 @@ g++ -O2 -std=c++11 -o orca orca.cpp
 
 ------
 
-### 2. Configurations
+## 2. Configurations
 
 All configurations are provided in `config/*.yaml`.
 
