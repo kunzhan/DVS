@@ -20,12 +20,9 @@ conda install -c conda-forge rdkit=2023.03.2
 
 We provide two **general graph datasets** (Planar, SBM) and two **molecular graph datasets** (QM9 and ZINC250k).
 
-Download datasets and move them to the `data` directory:
-
-- **Planar** (`planar_64_200.pt`)
-  https://drive.google.com/drive/folders/13esonTpioCzUAYBmPyeLSjXlDoemXXQB?usp=sharing
-- **SBM** (`sbm_200.pt`)
-  https://drive.google.com/drive/folders/1imzwi4a0cpVvE_Vyiwl7JCtkr13hv9Da?usp=sharing
+- Download datasets and move them to the `data` directory:
+	- **[Planar](https://drive.google.com/drive/folders/13esonTpioCzUAYBmPyeLSjXlDoemXXQB?usp=sharing)** (`planar_64_200.pt`)
+	- **[SBM](https://drive.google.com/drive/folders/1imzwi4a0cpVvE_Vyiwl7JCtkr13hv9Da?usp=sharing)** (`sbm_200.pt`)
 
 To generate general graph datasets:
 
